@@ -2,7 +2,7 @@ from openpyxl import load_workbook
 
 ## Load Workbook
 ## Change load_workbook("File Location")
-book = load_workbook("E:/Mata Kuliah/Semester 4/Pengantar Kecerdasan Buatan/Tugas/Tugas Pemrograman 03/traintest.xlsx")
+book = load_workbook("E:/Mata Kuliah/Semester 4/Pengantar Kecerdasan Buatan/Tugas/Tugas Pemrograman 03/TUGAS-PEMROGRAMAN-03-PENGANTAR-AI/traintest.xlsx")
 trainSheet = book['train']
 testSheet = book['test']
 Phi = 3.14259
@@ -125,7 +125,7 @@ def outputToExcel(input):
     for i in range(len(input)):
         testSheet["E"+str(i+2)].value = input[i].y
     ## Change book.save("File Location")
-    book.save("E:/Mata Kuliah/Semester 4/Pengantar Kecerdasan Buatan/Tugas/Tugas Pemrograman 03/traintest.xlsx")
+    book.save("E:/Mata Kuliah/Semester 4/Pengantar Kecerdasan Buatan/Tugas/Tugas Pemrograman 03/TUGAS-PEMROGRAMAN-03-PENGANTAR-AI/traintest.xlsx")
 
 ## Training Session
 print("### Training Session ###")
