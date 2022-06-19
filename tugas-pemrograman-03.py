@@ -1,3 +1,10 @@
+## TUGAS PEMROGRAMAN 03 PENGANTAR KECERDASAN BUATAN
+## KELOMPOK 3
+## 1301200428 - Muhammad Rafiqi Masrur
+## 1301200457 - Rasyid Riyaldi
+## KELAS: IF-44-01
+## Telkom University
+
 from openpyxl import load_workbook
 
 ## Load Workbook
