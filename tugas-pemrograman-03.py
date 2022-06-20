@@ -15,6 +15,7 @@ testSheet = book['test']
 Phi = 3.14259
 EULER = 2.71828
 
+## Data init
 class data():
     def __init__(self, id, x1, x2, x3, y):
         self.id = id    
@@ -46,64 +47,64 @@ def get_average(dataList):
     i = 0
     ptTrue = 0
     ptFalse = 0
-    returnedTrue = data(-1,0,0,0,-1)
-    returnedFalse = data(-1,0,0,0,-1)
+    avgTrue = data(-1,0,0,0,-1)
+    avgFalse = data(-1,0,0,0,-1)
     while i != len(dataList):
         if dataList[i].y == 1:
-            returnedTrue.x1 += dataList[i].x1
-            returnedTrue.x2 += dataList[i].x2
-            returnedTrue.x3 += dataList[i].x3
+            avgTrue.x1 += dataList[i].x1
+            avgTrue.x2 += dataList[i].x2
+            avgTrue.x3 += dataList[i].x3
             ptTrue += 1
         else:
-            returnedFalse.x1 += dataList[i].x1
-            returnedFalse.x2 += dataList[i].x2
-            returnedFalse.x3 += dataList[i].x3
+            avgFalse.x1 += dataList[i].x1
+            avgFalse.x2 += dataList[i].x2
+            avgFalse.x3 += dataList[i].x3
             ptFalse += 1
         i += 1
 
-    returnedTrue.x1 = returnedTrue.x1 / ptTrue
-    returnedTrue.x2 = returnedTrue.x2 / ptTrue
-    returnedTrue.x3 = returnedTrue.x3 / ptTrue
-    returnedFalse.x1 = returnedFalse.x1 / ptFalse
-    returnedFalse.x2 = returnedFalse.x2 / ptFalse
-    returnedFalse.x3 = returnedFalse.x3 / ptFalse
+    avgTrue.x1 = avgTrue.x1 / ptTrue
+    avgTrue.x2 = avgTrue.x2 / ptTrue
+    avgTrue.x3 = avgTrue.x3 / ptTrue
+    avgFalse.x1 = avgFalse.x1 / ptFalse
+    avgFalse.x2 = avgFalse.x2 / ptFalse
+    avgFalse.x3 = avgFalse.x3 / ptFalse
 
-    return returnedTrue, returnedFalse
+    return avgTrue, avgFalse
 
 ## Calculate standart deviation of data
 def get_standDev(avgTrue, avgFalse, dataList):
     i = 0
     ptTrue = 0
     ptFalse = 0
-    returnedTrue = data(-1,0,0,0,-1)
-    returnedFalse = data(-1,0,0,0,-1)
+    standDevTrue = data(-1,0,0,0,-1)
+    standDevFalse = data(-1,0,0,0,-1)
     while i != len(dataList):
         if dataList[i].y == 1:
-            returnedTrue.x1 = returnedTrue.x1 + ((dataList[i].x1 - avgTrue.x1) ** 2)
-            returnedTrue.x2 = returnedTrue.x2 + ((dataList[i].x2 - avgTrue.x2) ** 2)
-            returnedTrue.x3 = returnedTrue.x3 + ((dataList[i].x3 - avgTrue.x3) ** 2)
+            standDevTrue.x1 = standDevTrue.x1 + ((dataList[i].x1 - avgTrue.x1) ** 2)
+            standDevTrue.x2 = standDevTrue.x2 + ((dataList[i].x2 - avgTrue.x2) ** 2)
+            standDevTrue.x3 = standDevTrue.x3 + ((dataList[i].x3 - avgTrue.x3) ** 2)
             ptTrue += 1
         else:
-            returnedFalse.x1 = returnedFalse.x1 + ((dataList[i].x1 - avgFalse.x1) ** 2)
-            returnedFalse.x2 = returnedFalse.x2 + ((dataList[i].x2 - avgFalse.x2) ** 2)
-            returnedFalse.x3 = returnedFalse.x3 + ((dataList[i].x3 - avgFalse.x3) ** 2)
+            standDevFalse.x1 = standDevFalse.x1 + ((dataList[i].x1 - avgFalse.x1) ** 2)
+            standDevFalse.x2 = standDevFalse.x2 + ((dataList[i].x2 - avgFalse.x2) ** 2)
+            standDevFalse.x3 = standDevFalse.x3 + ((dataList[i].x3 - avgFalse.x3) ** 2)
             ptFalse += 1
         i += 1
     
-    returnedTrue.x1 = returnedTrue.x1 / ptTrue
-    returnedTrue.x2 = returnedTrue.x2 / ptTrue
-    returnedTrue.x3 = returnedTrue.x3 / ptTrue
-    returnedTrue.x1 = returnedTrue.x1 ** 0.5
-    returnedTrue.x2 = returnedTrue.x2 ** 0.5
-    returnedTrue.x3 = returnedTrue.x3 ** 0.5
-    returnedFalse.x1 = returnedFalse.x1 / ptFalse
-    returnedFalse.x2 = returnedFalse.x2 / ptFalse
-    returnedFalse.x3 = returnedFalse.x3 / ptFalse
-    returnedFalse.x1 = returnedFalse.x1 ** 0.5
-    returnedFalse.x2 = returnedFalse.x2 ** 0.5
-    returnedFalse.x3 = returnedFalse.x3 ** 0.5
+    standDevTrue.x1 = standDevTrue.x1 / ptTrue
+    standDevTrue.x2 = standDevTrue.x2 / ptTrue
+    standDevTrue.x3 = standDevTrue.x3 / ptTrue
+    standDevTrue.x1 = standDevTrue.x1 ** 0.5
+    standDevTrue.x2 = standDevTrue.x2 ** 0.5
+    standDevTrue.x3 = standDevTrue.x3 ** 0.5
+    standDevFalse.x1 = standDevFalse.x1 / ptFalse
+    standDevFalse.x2 = standDevFalse.x2 / ptFalse
+    standDevFalse.x3 = standDevFalse.x3 / ptFalse
+    standDevFalse.x1 = standDevFalse.x1 ** 0.5
+    standDevFalse.x2 = standDevFalse.x2 ** 0.5
+    standDevFalse.x3 = standDevFalse.x3 ** 0.5
 
-    return returnedTrue, returnedFalse
+    return standDevTrue, standDevFalse
 
 ## Naive Bayes method
 def naiveBayes(dataList, testData, avgTrue, avgFalse, standDevTrue, standDevFalse):
